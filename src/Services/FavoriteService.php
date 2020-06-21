@@ -4,7 +4,7 @@ namespace kosuha606\VirtualShop\Services;
 
 use kosuha606\VirtualShop\Model\FavoriteVm;
 use kosuha606\VirtualShop\Model\ProductVm;
-use app\virtualModels\Model\UserVm;
+use kosuha606\VirtualAdmin\Domains\User\UserVm;
 
 /**
  * @package kosuha606\VirtualShop\Services

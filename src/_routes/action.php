@@ -5,7 +5,7 @@ use kosuha606\VirtualAdmin\Structures\ListComponents;
 use kosuha606\VirtualShop\Model\ActionVm;
 use kosuha606\VirtualShop\Model\OrderVm;
 use kosuha606\VirtualShop\Model\ProductVm;
-use app\virtualModels\Model\UserVm;
+use kosuha606\VirtualAdmin\Domains\User\UserVm;
 use kosuha606\VirtualShop\Services\StringService;
 use kosuha606\VirtualModel\VirtualModel;
 use kosuha606\VirtualModelHelppack\ServiceManager;

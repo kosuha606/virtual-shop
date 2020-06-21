@@ -10,7 +10,7 @@ use kosuha606\VirtualShop\Model\PaymentVm;
 use kosuha606\VirtualShop\Model\ProductVm;
 use kosuha606\VirtualShop\Model\ProductRestsVm;
 use kosuha606\VirtualShop\Model\PromocodeVm;
-use app\virtualModels\Model\UserVm;
+use kosuha606\VirtualAdmin\Domains\User\UserVm;
 use kosuha606\VirtualShop\ServiceManager;
 use kosuha606\VirtualModel\VirtualModelManager;
 use phpDocumentor\Reflection\Types\Void_;

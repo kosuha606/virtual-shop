@@ -2,7 +2,7 @@
 
 use kosuha606\VirtualShop\Model\FilterProductVm;
 use kosuha606\VirtualShop\Model\ProductVm;
-use app\virtualModels\Model\UserVm;
+use kosuha606\VirtualAdmin\Domains\User\UserVm;
 use kosuha606\VirtualShop\ServiceManager;
 use kosuha606\VirtualModel\Example\MemoryModelProvider;
 use kosuha606\VirtualModel\VirtualModelManager;

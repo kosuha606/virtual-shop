@@ -1,6 +1,6 @@
 <?php
 
-use app\virtualModels\Model\UserVm;
+use kosuha606\VirtualAdmin\Domains\User\UserVm;
 use kosuha606\VirtualAdmin\Domains\Comment\CommentVm;
 use kosuha606\VirtualAdmin\Form\SecondaryFormBuilder;
 use kosuha606\VirtualAdmin\Form\SecondaryFormService;

@@ -4,7 +4,7 @@ namespace kosuha606\VirtualShop\Services;
 
 use kosuha606\VirtualShop\Model\Cart;
 use kosuha606\VirtualShop\Model\OrderVm;
-use app\virtualModels\Model\UserVm;
+use kosuha606\VirtualAdmin\Domains\User\UserVm;
 use kosuha606\VirtualModel\VirtualModel;
 use kosuha606\VirtualModel\VirtualModelManager;
 use kosuha606\VirtualShop\Model\OrderReserveVm;
