@@ -2,6 +2,7 @@
 
 namespace kosuha606\VirtualShop;
 
+use kosuha606\VirtualAdmin\Domains\User\UserService;
 use kosuha606\VirtualShop\Cart\CartBuilder;
 use kosuha606\VirtualShop\Services\CartService;
 use kosuha606\VirtualShop\Services\DeliveryService;
@@ -10,7 +11,6 @@ use kosuha606\VirtualShop\Services\OrderService;
 use kosuha606\VirtualShop\Services\PaymentService;
 use kosuha606\VirtualShop\Services\ProductService;
 use kosuha606\VirtualShop\Services\PromocodeService;
-use kosuha606\VirtualShop\Services\UserService;
 
 /**
  * @property UserService $userService
@@ -31,10 +31,16 @@ class ServiceManager
 
     private $type;
 
+    /**
+     * ServiceManager constructor.
+     * @param $type
+     * @throws \DI\DependencyException
+     * @throws \DI\NotFoundException
+     */
     public function __construct($type)
     {
         $this->services = [
-            'userService' => new UserService(),
+            'userService' => \kosuha606\VirtualModelHelppack\ServiceManager::getInstance()->get(UserService::class),
         ];
 
         $this->services['paymentService'] = new PaymentService();
