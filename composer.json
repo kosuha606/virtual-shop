@@ -11,8 +11,6 @@
   "minimum-stability": "stable",
   "require": {
     "php": ">=7.0.0",
-    "kosuha606/virtual-model": ">=1.2.3",
-    "kosuha606/virtual-model-helppack": "^0.0.9",
     "kosuha606/virtual-admin": "^1.0"
   },
   "autoload": {
