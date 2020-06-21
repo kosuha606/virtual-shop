@@ -2,7 +2,7 @@
 
 namespace kosuha606\VirtualShop\Services;
 
-use app\virtualModels\Model\UserVm;
+use kosuha606\VirtualAdmin\Domains\User\UserVm;
 use kosuha606\VirtualModel\VirtualModelManager;
 
 /**
