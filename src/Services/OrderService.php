@@ -2,6 +2,7 @@
 
 namespace kosuha606\VirtualShop\Services;
 
+use kosuha606\VirtualAdmin\Domains\User\UserService;
 use kosuha606\VirtualShop\Model\Cart;
 use kosuha606\VirtualShop\Model\OrderVm;
 use kosuha606\VirtualAdmin\Domains\User\UserVm;
