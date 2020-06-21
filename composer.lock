@@ -8,16 +8,16 @@
     "packages": [
         {
             "name": "kosuha606/virtual-admin",
-            "version": "1.0.4",
+            "version": "1.0.5",
             "source": {
                 "type": "git",
                 "url": "https://github.com/kosuha606/virtual-admin.git",
-                "reference": "9301f87cc0b8185fa2c10845f40efedbef3516e1"
+                "reference": "c0cd38855be6ab9908fd2a007efc4f4f3ae4f3a2"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/kosuha606/virtual-admin/zipball/9301f87cc0b8185fa2c10845f40efedbef3516e1",
-                "reference": "9301f87cc0b8185fa2c10845f40efedbef3516e1",
+                "url": "https://api.github.com/repos/kosuha606/virtual-admin/zipball/c0cd38855be6ab9908fd2a007efc4f4f3ae4f3a2",
+                "reference": "c0cd38855be6ab9908fd2a007efc4f4f3ae4f3a2",
                 "shasum": ""
             },
             "require": {
@@ -42,7 +42,7 @@
                 }
             ],
             "description": "VirtualAdmin",
-            "time": "2020-06-21T14:03:06+00:00"
+            "time": "2020-06-21T14:27:13+00:00"
         },
         {
             "name": "kosuha606/virtual-model",
