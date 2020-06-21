@@ -3,8 +3,8 @@
 
 return [
     'menu' => [
-        'market' => [
-            'name' => 'market',
+        'store' => [
+            'name' => 'store',
             'label' => 'Магазин',
         ],
     ]
