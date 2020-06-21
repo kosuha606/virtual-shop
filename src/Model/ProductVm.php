@@ -2,25 +2,21 @@
 
 namespace kosuha606\VirtualShop\Model;
 
-
-
-use app\models\Comment;
-use kosuha606\VirtualShop\Admin\Domains\Search\SearchableInterface;
-use kosuha606\VirtualShop\Admin\Domains\Search\SearchIndexDto;
-use kosuha606\VirtualShop\Admin\Domains\Search\SearchObserver;
-use kosuha606\VirtualShop\Admin\Domains\Seo\SeoModelInterface;
-use kosuha606\VirtualShop\Admin\Domains\Seo\SeoModelTrait;
-use kosuha606\VirtualShop\Admin\Domains\Seo\SeoUrlObserver;
-use kosuha606\VirtualShop\Domains\Cache\CacheAimInterface;
-use kosuha606\VirtualShop\Domains\Cache\CacheAimObserver;
-use kosuha606\VirtualShop\Domains\Cache\CacheEntityDto;
-use kosuha606\VirtualShop\Domains\Comment\Models\CommentVm;
-use kosuha606\VirtualShop\Domains\Multilang\MultilangTrait;
+use kosuha606\VirtualAdmin\Domains\Cache\CacheAimInterface;
+use kosuha606\VirtualAdmin\Domains\Cache\CacheAimObserver;
+use kosuha606\VirtualAdmin\Domains\Cache\CacheEntityDto;
+use kosuha606\VirtualAdmin\Domains\Comment\CommentVm;
+use kosuha606\VirtualAdmin\Domains\Multilang\MultilangTrait;
+use kosuha606\VirtualAdmin\Domains\Search\SearchableInterface;
+use kosuha606\VirtualAdmin\Domains\Search\SearchIndexDto;
+use kosuha606\VirtualAdmin\Domains\Search\SearchObserver;
+use kosuha606\VirtualAdmin\Domains\Seo\SeoModelInterface;
+use kosuha606\VirtualAdmin\Domains\Seo\SeoModelTrait;
+use kosuha606\VirtualAdmin\Domains\Seo\SeoUrlObserver;
 use kosuha606\VirtualModel\VirtualModel;
 use kosuha606\VirtualShop\ServiceManager;
 use kosuha606\VirtualShop\Services\ProductService;
 use kosuha606\VirtualModelHelppack\Traits\ObserveVMTrait;
-use yii\helpers\Url;
 
 /**
  * Продукт
@@ -197,6 +193,7 @@ class ProductVm extends VirtualModel
 
     /**
      * @return int
+     * @throws \Exception
      */
     public function maxAvailableRestAmount()
     {

@@ -2,11 +2,10 @@
 
 namespace kosuha606\VirtualShop\Model;
 
-use kosuha606\VirtualShop\Admin\Domains\Seo\SeoModelInterface;
-use kosuha606\VirtualShop\Admin\Domains\Seo\SeoModelTrait;
-use kosuha606\VirtualShop\Admin\Domains\Seo\SeoPageVm;
-use kosuha606\VirtualShop\Admin\Domains\Seo\SeoUrlObserver;
-use kosuha606\VirtualShop\Domains\Multilang\MultilangTrait;
+use kosuha606\VirtualAdmin\Domains\Multilang\MultilangTrait;
+use kosuha606\VirtualAdmin\Domains\Seo\SeoModelInterface;
+use kosuha606\VirtualAdmin\Domains\Seo\SeoModelTrait;
+use kosuha606\VirtualAdmin\Domains\Seo\SeoUrlObserver;
 use kosuha606\VirtualModel\VirtualModel;
 use kosuha606\VirtualModelHelppack\Traits\ObserveVMTrait;
 
