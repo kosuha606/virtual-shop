@@ -8,10 +8,10 @@
       "email": "kosuha606@gmail.com"
     }
   ],
-  "minimum-stability": "stable",
+  "minimum-stability": "dev",
   "require": {
     "php": ">=7.0.0",
-    "kosuha606/virtual-admin": "^1.0"
+    "kosuha606/virtual-admin": "dev-master"
   },
   "autoload": {
     "psr-4": {
