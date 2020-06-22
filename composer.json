@@ -11,7 +11,7 @@
   "minimum-stability": "stable",
   "require": {
     "php": ">=7.0.0",
-    "kosuha606/virtual-admin": "^1.0"
+    "kosuha606/virtual-admin": "dev-master"
   },
   "autoload": {
     "psr-4": {
