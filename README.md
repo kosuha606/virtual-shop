@@ -1,6 +1,6 @@
 Virtual Shop
 ---
-[![Build Status](https://travis-ci.org/kosuha606/html-uni-parser.svg?branch=master)](https://travis-ci.org/kosuha606/virtual-shop)
+[![Build Status](https://travis-ci.org/kosuha606/virtual-shop.svg?branch=master)](https://travis-ci.org/kosuha606/virtual-shop)
 
 Virtual model based kit for shop management
 
