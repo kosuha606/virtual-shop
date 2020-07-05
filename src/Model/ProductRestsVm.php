@@ -2,7 +2,7 @@
 
 namespace kosuha606\VirtualShop\Model;
 
-use kosuha606\VirtualModel\VirtualModel;
+use kosuha606\VirtualModel\VirtualModelEntity;
 
 /**
  * Остаток по продукту
@@ -10,7 +10,7 @@ use kosuha606\VirtualModel\VirtualModel;
  * Остаток по продукту
  * @property $qty
  */
-class ProductRestsVm extends VirtualModel
+class ProductRestsVm extends VirtualModelEntity
 {
     public function attributes(): array
     {

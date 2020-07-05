@@ -7,7 +7,7 @@ use kosuha606\VirtualShop\Model\OrderVm;
 use kosuha606\VirtualShop\Model\ProductVm;
 use kosuha606\VirtualAdmin\Domains\User\UserVm;
 use kosuha606\VirtualShop\Services\StringService;
-use kosuha606\VirtualModel\VirtualModel;
+use kosuha606\VirtualModel\VirtualModelEntity;
 use kosuha606\VirtualModelHelppack\ServiceManager;
 
 $baseEntity = 'action';
@@ -108,7 +108,7 @@ return [
                                             'type' => DetailComponents::SELECT_FIELD,
                                             'label' => 'Продукт',
                                             'props' => [
-                                                'items' => $stringService->map(VirtualModel::allToArray(ProductVm::many(['where' => [['all']]])), 'id', 'name')
+                                                'items' => $stringService->map(VirtualModelEntity::allToArray(ProductVm::many(['where' => [['all']]])), 'id', 'name')
                                             ]
                                         ]
                                     ]

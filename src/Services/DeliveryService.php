@@ -12,7 +12,7 @@ class DeliveryService
 {
     /**
      * @param $id
-     * @return \kosuha606\VirtualModel\VirtualModel
+     * @return \kosuha606\VirtualModel\VirtualModelEntity
      * @throws \Exception
      */
     public function findDeliveryById($id)

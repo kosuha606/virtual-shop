@@ -6,7 +6,7 @@ use kosuha606\VirtualAdmin\Domains\User\UserService;
 use kosuha606\VirtualShop\Model\Cart;
 use kosuha606\VirtualShop\Model\OrderVm;
 use kosuha606\VirtualAdmin\Domains\User\UserVm;
-use kosuha606\VirtualModel\VirtualModel;
+use kosuha606\VirtualModel\VirtualModelEntity;
 use kosuha606\VirtualModel\VirtualModelManager;
 use kosuha606\VirtualShop\Model\OrderReserveVm;
 use kosuha606\VirtualShop\Model\ProductVm;

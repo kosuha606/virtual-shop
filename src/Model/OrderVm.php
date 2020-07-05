@@ -2,7 +2,7 @@
 
 namespace kosuha606\VirtualShop\Model;
 
-use kosuha606\VirtualModel\VirtualModel;
+use kosuha606\VirtualModel\VirtualModelEntity;
 
 /**
  * @property $orderData
@@ -10,7 +10,7 @@ use kosuha606\VirtualModel\VirtualModel;
  * @property $userType
  * @property $reserve
  */
-class OrderVm extends VirtualModel
+class OrderVm extends VirtualModelEntity
 {
     public function attributes(): array
     {

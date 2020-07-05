@@ -6,7 +6,7 @@ use kosuha606\VirtualAdmin\Domains\Multilang\MultilangTrait;
 use kosuha606\VirtualAdmin\Domains\Seo\SeoModelInterface;
 use kosuha606\VirtualAdmin\Domains\Seo\SeoModelTrait;
 use kosuha606\VirtualAdmin\Domains\Seo\SeoUrlObserver;
-use kosuha606\VirtualModel\VirtualModel;
+use kosuha606\VirtualModel\VirtualModelEntity;
 use kosuha606\VirtualModelHelppack\Traits\ObserveVMTrait;
 
 /**
@@ -17,7 +17,7 @@ use kosuha606\VirtualModelHelppack\Traits\ObserveVMTrait;
  * @property $slug
  *
  */
-class CategoryVm extends VirtualModel implements SeoModelInterface
+class CategoryVm extends VirtualModelEntity implements SeoModelInterface
 {
     use SeoModelTrait;
 
@@ -52,6 +52,9 @@ class CategoryVm extends VirtualModel implements SeoModelInterface
         return $this->attributes['photo'] ?: 'https://via.placeholder.com/300x300';
     }
 
+    /**
+     * @return mixed
+     */
     public function getProductsCount()
     {
         return ProductVm::count([

@@ -5,7 +5,7 @@ use kosuha606\VirtualAdmin\Structures\ListComponents;
 use kosuha606\VirtualShop\Model\ActionVm;
 use kosuha606\VirtualShop\Model\DeliveryVm;
 use kosuha606\VirtualShop\Services\StringService;
-use kosuha606\VirtualModel\VirtualModel;
+use kosuha606\VirtualModel\VirtualModelEntity;
 use kosuha606\VirtualModelHelppack\ServiceManager;
 
 $baseEntity = 'delivery';

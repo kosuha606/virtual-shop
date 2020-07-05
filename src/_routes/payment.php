@@ -8,7 +8,7 @@ use kosuha606\VirtualShop\Model\OrderVm;
 use kosuha606\VirtualShop\Model\PaymentVm;
 use kosuha606\VirtualShop\Model\ProductVm;
 use kosuha606\VirtualShop\Services\StringService;
-use kosuha606\VirtualModel\VirtualModel;
+use kosuha606\VirtualModel\VirtualModelEntity;
 use kosuha606\VirtualModelHelppack\ServiceManager;
 
 $baseEntity = 'payment';

@@ -2,9 +2,9 @@
 
 namespace kosuha606\VirtualShop\Model;
 
-use kosuha606\VirtualModel\VirtualModel;
+use kosuha606\VirtualModel\VirtualModelEntity;
 
-class ProductSeoVm extends VirtualModel
+class ProductSeoVm extends VirtualModelEntity
 {
     public function attributes(): array
     {

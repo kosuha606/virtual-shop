@@ -92,7 +92,7 @@ class CartService
 
     /**
      * @param $deliveryId
-     * @return \kosuha606\VirtualModel\VirtualModel
+     * @return \kosuha606\VirtualModel\VirtualModelEntity
      * @throws \Exception
      */
     public function getDeliveryById($deliveryId)

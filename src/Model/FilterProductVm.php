@@ -2,9 +2,11 @@
 
 namespace kosuha606\VirtualShop\Model;
 
-use kosuha606\VirtualModel\VirtualModel;
+use kosuha606\VirtualAdmin\Services\RequestService;
+use kosuha606\VirtualModel\VirtualModelEntity;
+use kosuha606\VirtualModelHelppack\ServiceManager;
 
-class FilterProductVm extends VirtualModel
+class FilterProductVm extends VirtualModelEntity
 {
     public static $filter = [];
 
@@ -18,11 +20,18 @@ class FilterProductVm extends VirtualModel
         ];
     }
 
+    /**
+     * @return bool
+     * @throws \DI\DependencyException
+     * @throws \DI\NotFoundException
+     * @throws \Exception
+     */
     public function isActive()
     {
         if (!self::$filter) {
-            if (\Yii::$app->request->get('filter')) {
-                self::$filter = \Yii::$app->request->get('filter');
+            $requestService = ServiceManager::getInstance()->get(RequestService::class);
+            if (isset($requestService->request()->get['filter'])) {
+                self::$filter = $requestService->request()->get['filter'];
             } else {
                 self::$filter = ['none'];
             }

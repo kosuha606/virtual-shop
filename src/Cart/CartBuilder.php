@@ -116,6 +116,7 @@ class CartBuilder
 
     /**
      * @param $promocodeId
+     * @throws \Exception
      */
     public function setPromocodeById($promocodeId)
     {
@@ -150,6 +151,10 @@ class CartBuilder
         $this->cart->applyPromocode($promocode);
     }
 
+    /**
+     * @param $paymentId
+     * @throws \Exception
+     */
     public function setPaymentById($paymentId)
     {
         /** @var PaymentVm $payment */
@@ -157,6 +162,10 @@ class CartBuilder
         $this->cart->setPayment($payment);
     }
 
+    /**
+     * @param $deliveryId
+     * @throws \Exception
+     */
     public function setDeliveryById($deliveryId)
     {
         /** @var DeliveryVm $delivery */

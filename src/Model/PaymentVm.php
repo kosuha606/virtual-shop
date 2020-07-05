@@ -2,7 +2,7 @@
 
 namespace kosuha606\VirtualShop\Model;
 
-use kosuha606\VirtualModel\VirtualModel;
+use kosuha606\VirtualModel\VirtualModelEntity;
 
 /**
  * Вариант оплаты
@@ -10,7 +10,7 @@ use kosuha606\VirtualModel\VirtualModel;
  * @property $description
  * @property $comission
  */
-class PaymentVm extends VirtualModel
+class PaymentVm extends VirtualModelEntity
 {
     public function attributes(): array
     {

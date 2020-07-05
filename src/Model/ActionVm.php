@@ -3,14 +3,14 @@
 namespace kosuha606\VirtualShop\Model;
 
 use kosuha606\VirtualAdmin\Helpers\ConstructorHelper;
-use kosuha606\VirtualModel\VirtualModel;
+use kosuha606\VirtualModel\VirtualModelEntity;
 
 /**
  * Акция для продукта
  * @package kosuha606\Model\iteration2\model
  * @property $normalizeProductIds
  */
-class ActionVm extends VirtualModel
+class ActionVm extends VirtualModelEntity
 {
     public function attributes(): array
     {

@@ -13,7 +13,7 @@ use kosuha606\VirtualAdmin\Domains\Search\SearchObserver;
 use kosuha606\VirtualAdmin\Domains\Seo\SeoModelInterface;
 use kosuha606\VirtualAdmin\Domains\Seo\SeoModelTrait;
 use kosuha606\VirtualAdmin\Domains\Seo\SeoUrlObserver;
-use kosuha606\VirtualModel\VirtualModel;
+use kosuha606\VirtualModel\VirtualModelEntity;
 use kosuha606\VirtualShop\ServiceManager;
 use kosuha606\VirtualShop\Services\ProductService;
 use kosuha606\VirtualModelHelppack\Traits\ObserveVMTrait;
@@ -32,7 +32,7 @@ use kosuha606\VirtualModelHelppack\Traits\ObserveVMTrait;
  * @property $category_id
  *
  */
-class ProductVm extends VirtualModel
+class ProductVm extends VirtualModelEntity
     implements
     CacheAimInterface,
     SearchableInterface,
@@ -114,7 +114,7 @@ class ProductVm extends VirtualModel
 
     public function cacheItems(): array
     {
-        $rests = VirtualModel::allToArray(ProductRestsVm::many(['where' => [
+        $rests = VirtualModelEntity::allToArray(ProductRestsVm::many(['where' => [
             ['=', 'productId', $this->id]
         ]]));
         $cacheData = $this->toArray();

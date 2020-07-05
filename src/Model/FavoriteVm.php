@@ -2,12 +2,12 @@
 
 namespace kosuha606\VirtualShop\Model;
 
-use kosuha606\VirtualModel\VirtualModel;
+use kosuha606\VirtualModel\VirtualModelEntity;
 
 /**
  * @property $id
  */
-class FavoriteVm extends VirtualModel
+class FavoriteVm extends VirtualModelEntity
 {
     public function attributes(): array
     {
