@@ -2,11 +2,14 @@
 
 namespace kosuha606\VirtualShop\Services;
 
-/**
- * @package kosuha606\VirtualShop\Services
- */
 class StringService
 {
+    /**
+     * @param $data
+     * @param $from
+     * @param $to
+     * @return array
+     */
     public function map($data, $from, $to)
     {
         $result = [];

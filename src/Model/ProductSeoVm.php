@@ -6,6 +6,9 @@ use kosuha606\VirtualModel\VirtualModelEntity;
 
 class ProductSeoVm extends VirtualModelEntity
 {
+    /**
+     * @return array
+     */
     public function attributes(): array
     {
         return [

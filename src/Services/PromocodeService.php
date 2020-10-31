@@ -5,9 +5,6 @@ namespace kosuha606\VirtualShop\Services;
 use kosuha606\VirtualModel\VirtualModelManager;
 use kosuha606\VirtualShop\Model\PromocodeVm;
 
-/**
- * @package kosuha606\VirtualShop\Services
- */
 class PromocodeService
 {
     /**

@@ -6,9 +6,6 @@ use kosuha606\VirtualShop\Model\FavoriteVm;
 use kosuha606\VirtualShop\Model\ProductVm;
 use kosuha606\VirtualAdmin\Domains\User\UserVm;
 
-/**
- * @package kosuha606\VirtualShop\Services
- */
 class FavoriteService
 {
     /**
@@ -32,13 +29,13 @@ class FavoriteService
     /**
      * @param UserVm $user
      * @param ProductVm $product
-     * @return bool
+     * @return void
      * @throws \Exception
      */
     public function addUserProduct(UserVm $user, ProductVm $product)
     {
         if ($this->hasFavorite($user, $product)) {
-            return false;
+            return;
         }
 
         $favorite = FavoriteVm::create([
@@ -52,6 +49,7 @@ class FavoriteService
     /**
      * @param $productId
      * @param $userId
+     * @return void
      * @throws \Exception
      */
     public function deleteByProductAndUserId($productId, $userId)

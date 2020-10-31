@@ -2,42 +2,28 @@
 
 namespace kosuha606\VirtualShop\Model;
 
-use kosuha606\VirtualShop\ServiceManager;
 use kosuha606\VirtualShop\Services\CartService;
 
-/**
- * Корзина
- * @NOTICE Корзина должна каждый раз быть построена при каждой загрузке приложения
- * @NOTICE Нужен враппер который будет заниматься построением корзины
- * @package kosuha606\Model\iteration2\model
- */
 class Cart
 {
-    /**
-     * @var CartItem[]
-     */
+    /** @var CartItem[] */
     public $items = [];
 
-    /**
-     * @var PromocodeVm
-     */
+    /** @var PromocodeVm */
     public $promocode;
 
-    /**
-     * @var DeliveryVm
-     */
+    /** @var DeliveryVm */
     public $delivery;
 
-    /**
-     * @var PaymentVm
-     */
+    /** @var PaymentVm */
     public $payment;
 
-    /**
-     * @var CartService
-     */
+    /** @var CartService */
     public $cartService;
 
+    /**
+     * @param CartService $cartService
+     */
     public function __construct(CartService $cartService)
     {
         $this->cartService = $cartService;
@@ -46,12 +32,17 @@ class Cart
     /**
      * @return float|int
      * @throws \Exception
+     * @deprecated to find usages
      */
     public function complete()
     {
         return $this->cartService->calculateTotals($this);
     }
 
+    /**
+     * @param PromocodeVm $promocode
+     * @return void
+     */
     public function applyPromocode(PromocodeVm $promocode)
     {
         $this->promocode = $promocode;
@@ -66,6 +57,9 @@ class Cart
         return $this->cartService->calculateTotals($this);
     }
 
+    /**
+     * @return float|int
+     */
     public function getProductsTotal()
     {
         $price = 0;
@@ -80,6 +74,7 @@ class Cart
     /**
      * @param ProductVm $product
      * @param int $qty
+     * @return void
      * @throws \Exception
      */
     public function addProduct(ProductVm $product, $qty = 1)
@@ -101,6 +96,11 @@ class Cart
         }
     }
 
+    /**
+     * @param ProductVm $product
+     * @return void
+     * @throws \Exception
+     */
     public function deleteProduct(ProductVm $product)
     {
         $newItems = [];
@@ -123,25 +123,33 @@ class Cart
 
     /**
      * @param DeliveryVm $delivery
+     * @return void
      */
-    public function setDelivery(DeliveryVm $delivery): void
+    public function setDelivery(DeliveryVm $delivery)
     {
         $this->delivery = $delivery;
     }
 
     /**
      * @param PaymentVm $payment
+     * @return void
      */
-    public function setPayment(PaymentVm $payment): void
+    public function setPayment(PaymentVm $payment)
     {
         $this->payment = $payment;
     }
 
+    /**
+     * @return int
+     */
     public function getCountProducts()
     {
         return count($this->items);
     }
 
+    /**
+     * @return int
+     */
     public function getAmount()
     {
         $amount = 0;
@@ -153,11 +161,17 @@ class Cart
         return $amount;
     }
 
+    /**
+     * @return CartItem[]
+     */
     public function getItems()
     {
         return $this->items;
     }
 
+    /**
+     * @return bool
+     */
     public function hasItems()
     {
         return count($this->items) > 0;

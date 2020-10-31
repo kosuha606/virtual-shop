@@ -2,20 +2,23 @@
 
 namespace kosuha606\VirtualShop\Model;
 
-/**
- * Элемент корзины
- * @package kosuha606\Model\iteration2\model
- */
 class CartItem
 {
+    /** @var int */
     public $price;
 
+    /** @var int */
     public $productId;
 
+    /** @var string */
     public $name;
 
+    /** @var int */
     public $qty;
 
+    /**
+     * @param array $data
+     */
     public function __construct($data = [])
     {
         foreach ($data as $attr => $value) {
@@ -23,6 +26,9 @@ class CartItem
         }
     }
 
+    /**
+     * @return float|int
+     */
     public function getTotal()
     {
         return $this->price*$this->qty;

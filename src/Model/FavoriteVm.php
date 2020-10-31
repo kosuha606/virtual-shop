@@ -4,11 +4,11 @@ namespace kosuha606\VirtualShop\Model;
 
 use kosuha606\VirtualModel\VirtualModelEntity;
 
-/**
- * @property $id
- */
 class FavoriteVm extends VirtualModelEntity
 {
+    /**
+     * @return array
+     */
     public function attributes(): array
     {
         return [

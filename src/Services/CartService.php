@@ -3,10 +3,8 @@
 namespace kosuha606\VirtualShop\Services;
 
 use kosuha606\VirtualShop\Model\Cart;
+use LogicException;
 
-/**
- * @package kosuha606\VirtualShop\Services
- */
 class CartService
 {
     /** @var OrderService */
@@ -18,8 +16,15 @@ class CartService
     /** @var DeliveryService */
     private $deliveryService;
 
+    /** @var PromocodeService  */
     private $promocodeService;
 
+    /**
+     * @param OrderService $orderService
+     * @param PaymentService $paymentService
+     * @param DeliveryService $deliveryService
+     * @param PromocodeService $promocodeService
+     */
     public function __construct(
         OrderService $orderService,
         PaymentService $paymentService,
@@ -61,7 +66,7 @@ class CartService
 
         if ($cart->promocode) {
             if ($price < $cart->promocode->amount) {
-                throw new \Exception('Сумма промокода больше суммы корзины');
+                throw new LogicException('Promocode sum is more than cart sum');
             }
 
             $price -= $cart->promocode->amount;

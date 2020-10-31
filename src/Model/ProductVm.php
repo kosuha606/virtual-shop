@@ -18,20 +18,6 @@ use kosuha606\VirtualShop\ServiceManager;
 use kosuha606\VirtualShop\Services\ProductService;
 use kosuha606\VirtualModelHelppack\Traits\ObserveVMTrait;
 
-/**
- * Продукт
- * @property $rests
- *
- * @property $id
- * @property $name
- * @property $price
- * @property $slug
- * @property $price2B
- * @property $actions
- * @property $photo
- * @property $category_id
- *
- */
 class ProductVm extends VirtualModelEntity
     implements
     CacheAimInterface,
@@ -47,14 +33,15 @@ class ProductVm extends VirtualModelEntity
     /** @var ProductService */
     private $productService;
 
+    /** @var bool */
     public $hasDiscount = false;
 
-    /**
-     * Виртуальный атритут за который действительно продается товар
-     * @var int
-     */
+    /** @var int */
     private $sale_price;
 
+    /**
+     * @return array
+     */
     public function attributes(): array
     {
         return [
@@ -70,6 +57,10 @@ class ProductVm extends VirtualModelEntity
         ];
     }
 
+    /**
+     * @return string
+     * @throws \Exception
+     */
     public function buildUrl()
     {
         $category = $this->getCategory();
@@ -82,6 +73,10 @@ class ProductVm extends VirtualModelEntity
         return $result;
     }
 
+    /**
+     * @return SearchIndexDto
+     * @throws \Exception
+     */
     public function buildIndex(): SearchIndexDto
     {
         return new SearchIndexDto(1, [
@@ -103,6 +98,9 @@ class ProductVm extends VirtualModelEntity
         ]);
     }
 
+    /**
+     * @return array
+     */
     public static function observers()
     {
         return [
@@ -112,6 +110,10 @@ class ProductVm extends VirtualModelEntity
         ];
     }
 
+    /**
+     * @return array
+     * @throws \Exception
+     */
     public function cacheItems(): array
     {
         $rests = VirtualModelEntity::allToArray(ProductRestsVm::many(['where' => [
@@ -131,23 +133,31 @@ class ProductVm extends VirtualModelEntity
         ];
     }
 
+    /**
+     * @param string $environment
+     * @throws \Exception
+     */
     public function __construct($environment = 'db')
     {
         $this->productService = ServiceManager::getInstance()->productService;
         parent::__construct($environment);
     }
 
+    /**
+     * @param $name
+     * @param $value
+     * @return void
+     * @throws \Exception
+     */
     public function setAttribute($name, $value)
     {
-        $result = parent::setAttribute($name, $value);
+        parent::setAttribute($name, $value);
 
         if ($name === 'actions') {
             if ($this->price != $this->getSalePrice()) {
                 $this->hasDiscount = true;
             }
         }
-
-        return $result;
     }
 
     /**
@@ -164,8 +174,7 @@ class ProductVm extends VirtualModelEntity
             ]);
             $this->setAttribute('rests', $rests);
         } elseif (isset($this->attributes['rests'][0])
-            && is_array($this->attributes['rests'][0])
-        ) {
+            && is_array($this->attributes['rests'][0])) {
             $rests = ProductRestsVm::createMany($this->attributes['rests']);
             $this->setAttribute('rests', $rests);
         }
@@ -173,17 +182,17 @@ class ProductVm extends VirtualModelEntity
         return $this->attributes['rests'];
     }
 
+    /**
+     * @return string
+     */
     public function getPhotoSafe()
     {
         return $this->attributes['photo'] ? '/'.$this->attributes['photo'] : 'https://via.placeholder.com/300x300';
     }
 
     /**
-     * Проверяет имеются ли свободные остатки по
-     * продукту
      * @param $qty
      * @return bool
-     * @NOTICE Переделал, теперь происходит делегирование логики к дружественному классу-сервису
      * @throws \Exception
      */
     public function hasFreeRests($qty)
@@ -210,7 +219,7 @@ class ProductVm extends VirtualModelEntity
     }
 
     /**
-     *
+     * @return int|mixed
      */
     public function maxRestAmount()
     {
@@ -225,7 +234,6 @@ class ProductVm extends VirtualModelEntity
     }
 
     /**
-     * Получить цену за которую нужно продать товар
      * @return float|int
      * @throws \Exception
      */
@@ -238,6 +246,9 @@ class ProductVm extends VirtualModelEntity
         return $this->productService->calculateProductSalePrice($this);
     }
 
+    /**
+     * @return CategoryVm
+     */
     public function getCategory()
     {
         return CategoryVm::one([

@@ -8,8 +8,12 @@ use kosuha606\VirtualModelHelppack\ServiceManager;
 
 class FilterProductVm extends VirtualModelEntity
 {
+    /** @var array  */
     public static $filter = [];
 
+    /**
+     * @return array
+     */
     public function attributes(): array
     {
         return [
@@ -40,6 +44,9 @@ class FilterProductVm extends VirtualModelEntity
         return in_array($this->getKey(), self::$filter);
     }
 
+    /**
+     * @return string
+     */
     public function getKey()
     {
         return $this->value.'_'.$this->category_id;

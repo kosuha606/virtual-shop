@@ -9,14 +9,6 @@ use kosuha606\VirtualAdmin\Domains\Seo\SeoUrlObserver;
 use kosuha606\VirtualModel\VirtualModelEntity;
 use kosuha606\VirtualModelHelppack\Traits\ObserveVMTrait;
 
-/**
- *
- * @property $id
- * @property $name
- * @property $photo
- * @property $slug
- *
- */
 class CategoryVm extends VirtualModelEntity implements SeoModelInterface
 {
     use SeoModelTrait;
@@ -25,6 +17,9 @@ class CategoryVm extends VirtualModelEntity implements SeoModelInterface
 
     use MultilangTrait;
 
+    /**
+     * @return array
+     */
     public static function observers()
     {
         return [
@@ -32,6 +27,9 @@ class CategoryVm extends VirtualModelEntity implements SeoModelInterface
         ];
     }
 
+    /**
+     * @return array
+     */
     public function attributes(): array
     {
         return [
@@ -42,18 +40,24 @@ class CategoryVm extends VirtualModelEntity implements SeoModelInterface
         ];
     }
 
+    /**
+     * @return string
+     */
     public function buildUrl()
     {
         return '/'.$this->id.'-'.$this->slug;
     }
 
+    /**
+     * @return string
+     */
     public function getPhotoSafe()
     {
         return $this->attributes['photo'] ?: 'https://via.placeholder.com/300x300';
     }
 
     /**
-     * @return mixed
+     * @return int
      */
     public function getProductsCount()
     {

@@ -22,6 +22,7 @@ use kosuha606\VirtualShop\Services\PromocodeService;
  * @property CartBuilder $cartBuilder
  * @property OrderService $orderService
  * @property FavoriteService $favoriteService
+ * @deprecated Use container instead
  */
 class ServiceManager
 {

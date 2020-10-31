@@ -10,23 +10,21 @@ use kosuha606\VirtualModel\VirtualModelManager;
 use kosuha606\VirtualShop\Model\ActionVm;
 use kosuha606\VirtualShop\Model\ProductVm;
 
-/**
- * @package kosuha606\VirtualShop\Services
- */
 class ProductService
 {
-    /**
-     * @var OrderService
-     */
+    /** @var OrderService  */
     private $orderService;
-    /**
-     * @var FavoriteService
-     */
+
+    /** @var FavoriteService  */
     private $favoriteService;
 
     /** @var ActionVm[] */
     private $actions = [];
 
+    /**
+     * @param OrderService $orderService
+     * @param FavoriteService $favoriteService
+     */
     public function __construct(OrderService $orderService, FavoriteService $favoriteService)
     {
         $this->orderService = $orderService;
@@ -67,7 +65,10 @@ class ProductService
     }
 
     /**
-     * @param array $config
+     * @param array $filters
+     * @param int $page
+     * @param int $itemsPerPage
+     * @param string $orderBy
      * @return LoadProductsDTO
      * @throws \Exception
      */
@@ -142,6 +143,7 @@ class ProductService
     public function isInFavorite(ProductVm $product)
     {
         $user = ServiceManager::getInstance()->userService->current();
+
         if (!$user) {
             return false;
         }
@@ -158,7 +160,6 @@ class ProductService
     {
         $reservedInOrdersQty = $this->orderService->findOrderReserveQtyByProduct($productVm);
         $maxRestAmount = $productVm->maxRestAmount();
-
         $amount = $maxRestAmount - $reservedInOrdersQty;
 
         if ($amount <= 0) {
@@ -168,6 +169,10 @@ class ProductService
         return $amount;
     }
 
+    /**
+     * @param $product
+     * @return float|int
+     */
     public function calculateProductSalePrice($product)
     {
         $price = $product->price;
@@ -186,7 +191,7 @@ class ProductService
 
     /**
      * @param $getFilters
-     * @return mixed
+     * @return array
      * @throws \Exception
      */
     public function processGetFilters($getFilters = [])

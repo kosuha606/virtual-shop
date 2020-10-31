@@ -2,7 +2,6 @@
 
 namespace kosuha606\VirtualShop\Cart;
 
-
 use kosuha606\VirtualShop\Model\Cart;
 use kosuha606\VirtualShop\Model\DeliveryVm;
 use kosuha606\VirtualShop\Model\PaymentVm;
@@ -10,28 +9,21 @@ use kosuha606\VirtualShop\Model\PromocodeVm;
 use kosuha606\VirtualShop\Services\CartService;
 use kosuha606\VirtualShop\Services\ProductService;
 
-/**
- * Построитель корзины, основная идея в том, чтобы
- * используя простые типы данных создавать корзину
- * с помощью простого интерфейса
- *
- * @package kosuha606\Model\iteration2\cart
- */
 class CartBuilder
 {
     /** @var Cart */
     private $cart;
 
-    /**
-     * @var CartService
-     */
+    /** @var CartService */
     private $cartService;
 
-    /**
-     * @var ProductService
-     */
+    /** @var ProductService */
     private $productService;
 
+    /**
+     * @param CartService $cartService
+     * @param ProductService $productService
+     */
     public function __construct(
         CartService $cartService,
         ProductService $productService
@@ -41,6 +33,9 @@ class CartBuilder
         $this->productService = $productService;
     }
 
+    /**
+     * @return array
+     */
     public function serialize(): array
     {
         $result = [];
@@ -95,6 +90,7 @@ class CartBuilder
     /**
      * @param $productId
      * @param $qty
+     * @return void
      * @throws \Exception
      */
     public function addProductById($productId, $qty)
@@ -106,6 +102,7 @@ class CartBuilder
 
     /**
      * @param $productId
+     * @return void
      * @throws \Exception
      */
     public function deleteProductById($productId)
@@ -116,6 +113,7 @@ class CartBuilder
 
     /**
      * @param $promocodeId
+     * @return void
      * @throws \Exception
      */
     public function setPromocodeById($promocodeId)
@@ -124,6 +122,9 @@ class CartBuilder
         $this->cart->applyPromocode($promocode);
     }
 
+    /**
+     * @return void
+     */
     public function clear()
     {
         $this->cart->items = [];
@@ -134,6 +135,7 @@ class CartBuilder
 
     /**
      * @param $code
+     * @return void
      * @throws \Exception
      */
     public function setPromocodeByCode($code)
@@ -153,6 +155,7 @@ class CartBuilder
 
     /**
      * @param $paymentId
+     * @return void
      * @throws \Exception
      */
     public function setPaymentById($paymentId)
@@ -164,6 +167,7 @@ class CartBuilder
 
     /**
      * @param $deliveryId
+     * @return void
      * @throws \Exception
      */
     public function setDeliveryById($deliveryId)
@@ -173,6 +177,9 @@ class CartBuilder
         $this->cart->setDelivery($delivery);
     }
 
+    /**
+     * @return Cart
+     */
     public function getCart()
     {
         return $this->cart;

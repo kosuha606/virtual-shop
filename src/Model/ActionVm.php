@@ -5,13 +5,11 @@ namespace kosuha606\VirtualShop\Model;
 use kosuha606\VirtualAdmin\Helpers\ConstructorHelper;
 use kosuha606\VirtualModel\VirtualModelEntity;
 
-/**
- * Акция для продукта
- * @package kosuha606\Model\iteration2\model
- * @property $normalizeProductIds
- */
 class ActionVm extends VirtualModelEntity
 {
+    /**
+     * @return array
+     */
     public function attributes(): array
     {
         return [
@@ -23,6 +21,9 @@ class ActionVm extends VirtualModelEntity
         ];
     }
 
+    /**
+     * @return mixed
+     */
     public function getProductIds()
     {
         if (is_array($this->attributes['productIds'])) {
@@ -34,6 +35,9 @@ class ActionVm extends VirtualModelEntity
         return $result;
     }
 
+    /**
+     * @return array|mixed
+     */
     public function getNormalizeProductIds()
     {
         $result = $this->getProductIds();

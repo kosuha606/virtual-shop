@@ -2,12 +2,8 @@
 
 namespace kosuha606\VirtualShop\Services;
 
-use kosuha606\VirtualModel\VirtualModelManager;
 use kosuha606\VirtualShop\Model\PaymentVm;
 
-/**
- * @package kosuha606\VirtualShop\Services
- */
 class PaymentService
 {
     /**

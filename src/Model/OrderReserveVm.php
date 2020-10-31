@@ -4,12 +4,11 @@ namespace kosuha606\VirtualShop\Model;
 
 use kosuha606\VirtualModel\VirtualModelEntity;
 
-/**
- * Резерв продуктов в заказах
- * @package kosuha606\Model\iteration2\model
- */
 class OrderReserveVm extends VirtualModelEntity
 {
+    /**
+     * @return array
+     */
     public function attributes(): array
     {
         return [

@@ -4,13 +4,11 @@ namespace kosuha606\VirtualShop\Model;
 
 use kosuha606\VirtualModel\VirtualModelEntity;
 
-/**
- * Вариант доставки
- * @package kosuha606\Model\iteration2\model
- * @property $description
- */
 class DeliveryVm extends VirtualModelEntity
 {
+    /**
+     * @return array
+     */
     public function attributes(): array
     {
         return [

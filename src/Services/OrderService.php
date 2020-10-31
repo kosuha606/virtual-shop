@@ -6,19 +6,18 @@ use kosuha606\VirtualAdmin\Domains\User\UserService;
 use kosuha606\VirtualShop\Model\Cart;
 use kosuha606\VirtualShop\Model\OrderVm;
 use kosuha606\VirtualAdmin\Domains\User\UserVm;
-use kosuha606\VirtualModel\VirtualModelEntity;
 use kosuha606\VirtualModel\VirtualModelManager;
 use kosuha606\VirtualShop\Model\OrderReserveVm;
 use kosuha606\VirtualShop\Model\ProductVm;
 
-/**
- * @package kosuha606\VirtualShop\Services
- */
 class OrderService
 {
     /** @var UserService */
     public $userService;
 
+    /**
+     * @param UserService $userService
+     */
     public function __construct(UserService $userService)
     {
         $this->userService = $userService;
@@ -27,6 +26,7 @@ class OrderService
     /**
      * @param Cart $cart
      * @param UserVm $user
+     * @return void
      * @throws \Exception
      */
     public function buildOrder(Cart $cart, UserVm $user)
@@ -89,6 +89,9 @@ class OrderService
         return $reservedQty;
     }
 
+    /**
+     * @return UserVm
+     */
     public function currentUser()
     {
         return $this->userService->current();
@@ -109,6 +112,10 @@ class OrderService
         return $items;
     }
 
+    /**
+     * @param $range
+     * @return array
+     */
     public function buildOrdersStatistic($range)
     {
         $ordersDynamic = ['dates' => [], 'values' => []];
