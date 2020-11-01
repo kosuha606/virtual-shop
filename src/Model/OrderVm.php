@@ -4,6 +4,14 @@ namespace kosuha606\VirtualShop\Model;
 
 use kosuha606\VirtualModel\VirtualModelEntity;
 
+/**
+ * @property $id
+ * @property $orderData
+ * @property $user_id
+ * @property $total
+ * @property $userType
+ * @property $reserve
+ */
 class OrderVm extends VirtualModelEntity
 {
     /**
@@ -43,7 +51,7 @@ class OrderVm extends VirtualModelEntity
             $attributes['orderData'] = json_decode($attributes['orderData'], true);
         }
 
-        return parent::setAttributes($attributes);
+        parent::setAttributes($attributes);
     }
 
     /**

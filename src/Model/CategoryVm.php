@@ -9,6 +9,12 @@ use kosuha606\VirtualAdmin\Domains\Seo\SeoUrlObserver;
 use kosuha606\VirtualModel\VirtualModelEntity;
 use kosuha606\VirtualModelHelppack\Traits\ObserveVMTrait;
 
+/**
+ * @property $id
+ * @property $name
+ * @property $photo
+ * @property $slug
+ */
 class CategoryVm extends VirtualModelEntity implements SeoModelInterface
 {
     use SeoModelTrait;

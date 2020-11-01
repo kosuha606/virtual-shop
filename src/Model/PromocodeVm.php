@@ -4,6 +4,12 @@ namespace kosuha606\VirtualShop\Model;
 
 use kosuha606\VirtualModel\VirtualModelEntity;
 
+/**
+ * @property $id
+ * @property $amount
+ * @property $code
+ * @property $userType
+ */
 class PromocodeVm extends VirtualModelEntity
 {
     /**

@@ -5,6 +5,13 @@ namespace kosuha606\VirtualShop\Model;
 use kosuha606\VirtualAdmin\Helpers\ConstructorHelper;
 use kosuha606\VirtualModel\VirtualModelEntity;
 
+/**
+ * @property $id
+ * @property $normalizeProductIds
+ * @property $productIds
+ * @property $percent
+ * @property $userType
+ */
 class ActionVm extends VirtualModelEntity
 {
     /**

@@ -4,6 +4,12 @@ namespace kosuha606\VirtualShop\Model;
 
 use kosuha606\VirtualModel\VirtualModelEntity;
 
+/**
+ * @property $id
+ * @property $productId
+ * @property $qty
+ * @property $userType
+ */
 class ProductRestsVm extends VirtualModelEntity
 {
     /**

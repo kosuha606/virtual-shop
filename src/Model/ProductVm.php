@@ -18,6 +18,17 @@ use kosuha606\VirtualShop\ServiceManager;
 use kosuha606\VirtualShop\Services\ProductService;
 use kosuha606\VirtualModelHelppack\Traits\ObserveVMTrait;
 
+/**
+ * @property $id
+ * @property $name
+ * @property $price
+ * @property $slug
+ * @property $price2B
+ * @property $actions
+ * @property $rests
+ * @property $photo
+ * @property $category_id
+ */
 class ProductVm extends VirtualModelEntity
     implements
     CacheAimInterface,

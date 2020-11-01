@@ -4,6 +4,13 @@ namespace kosuha606\VirtualShop\Model;
 
 use kosuha606\VirtualModel\VirtualModelEntity;
 
+/**
+ * @property $id
+ * @property $product_id
+ * @property $meta_title
+ * @property $meta_keywords
+ * @property $meta_description
+ */
 class ProductSeoVm extends VirtualModelEntity
 {
     /**

@@ -4,6 +4,12 @@ namespace kosuha606\VirtualShop\Model;
 
 use kosuha606\VirtualModel\VirtualModelEntity;
 
+/**
+ * @property $orderId
+ * @property $productId
+ * @property $qty
+ * @property $userType
+ */
 class OrderReserveVm extends VirtualModelEntity
 {
     /**

@@ -6,6 +6,12 @@ use kosuha606\VirtualAdmin\Services\RequestService;
 use kosuha606\VirtualModel\VirtualModelEntity;
 use kosuha606\VirtualModelHelppack\ServiceManager;
 
+/**
+ * @property $id
+ * @property $category_id
+ * @property $product_id
+ * @property $value
+ */
 class FilterProductVm extends VirtualModelEntity
 {
     /** @var array  */
